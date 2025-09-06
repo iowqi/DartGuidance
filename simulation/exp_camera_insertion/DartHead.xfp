@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XFlow build="1.0.116.00">
+ <Project>
+  <Name>DartHead</Name>
+ </Project>
+ <Engine>
+  <Kernel>3d</Kernel>
+  <FlowModel type="SinglePhase"/>
+  <AnalysisType>External</AnalysisType>
+  <ThermalModel type="Isothermal"/>
+  <TurbulenceSettings>
+   <TurbulenceModel type="Automatic"/>
+  </TurbulenceSettings>
+ </Engine>
+ <Environment>
+  <GlobalAttributes>
+   <DomainType>VirtualWindTunnel</DomainType>
+   <ExtAccelerationLaws>
+    <X>0</X>
+    <Y>0</Y>
+    <Z>0</Z>
+   </ExtAccelerationLaws>
+   <InitialConditions type="WindTunnelDefault"/>
+   <ReferenceArea type="Front"/>
+   <ReferenceVelocity type="Automatic"/>
+  </GlobalAttributes>
+  <WindTunnel>
+   <Position doe="0">( 0 , 0 , 0 )</Position>
+   <Dimensions doe="0">( 0.2 , 0.1 , 0.1 )</Dimensions>
+   <GroundWall type="Off"/>
+   <LateralBoundaries>Periodic</LateralBoundaries>
+   <BoundaryConditions type="Velocity">
+    <VelocityLaws>
+     <X>18</X>
+     <Y>0</Y>
+     <Z>0</Z>
+    </VelocityLaws>
+   </BoundaryConditions>
+   <H5File/>
+  </WindTunnel>
+ </Environment>
+ <Materials>
+  <Materials>
+   <Material1>
+    <Name>Material 1</Name>
+    <Type>Gas</Type>
+    <MolecularWeight doe="0">28.996</MolecularWeight>
+    <ReferenceDensityGas doe="0">1.225</ReferenceDensityGas>
+    <OperatingTemperature doe="0">288.15</OperatingTemperature>
+    <ViscosityModel type="Newtonian">
+     <DynamicViscosity doe="0">1.7894e-05</DynamicViscosity>
+    </ViscosityModel>
+    <HTCEstimation type="Automatic">
+     <HTCThermalConductivity doe="0">0.0243</HTCThermalConductivity>
+     <HTCSpecificHeatCapacity doe="0">1006.43</HTCSpecificHeatCapacity>
+    </HTCEstimation>
+    <AdiabaticIndex doe="0">1.4</AdiabaticIndex>
+   </Material1>
+  </Materials>
+ </Materials>
+ <Geometry>
+  <Entities>
+   <Shape id="19" name="DartAsm">
+    <VisibilityOnViews>1</VisibilityOnViews>
+    <File>DartAsm.nfb</File>
+    <MaterialDoubleSided>Off</MaterialDoubleSided>
+    <Material type="Rubber">
+     <Colour>( 0 , 255 , 0 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </Material>
+    <MaterialInside type="">
+     <Colour>( 0 , 0 , 255 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </MaterialInside>
+    <Behaviour type="Fixed">
+     <Scale doe="0">1</Scale>
+     <Position doe="0">( 0 , 0 , 0 )</Position>
+     <Orientation doe="0">( 0 , -90 , 0 )</Orientation>
+    </Behaviour>
+    <EnableBoundaryConditions>On</EnableBoundaryConditions>
+    <CosimulationRegionName/>
+    <CosimulationReferenceMarkerMode>Off</CosimulationReferenceMarkerMode>
+    <CosimulationReferenceMarkerPosition doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerPosition>
+    <CosimulationReferenceMarkerRotation doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerRotation>
+    <BoundaryConditions type="Wall">
+     <WallModel>Automatic</WallModel>
+     <WallRoughness doe="0">0</WallRoughness>
+    </BoundaryConditions>
+    <ImportData3DX>
+     <ItemName3DX/>
+     <InstanceHandle3DX/>
+     <ImportShapeName/>
+     <ImportEdgeQuality>0</ImportEdgeQuality>
+     <ImportFaceQuality>0</ImportFaceQuality>
+    </ImportData3DX>
+    <Surfaces/>
+    <Children/>
+   </Shape>
+  </Entities>
+  <ArbitraryReferenceFrame>
+   <ReferenceGeometry>Global</ReferenceGeometry>
+  </ArbitraryReferenceFrame>
+  <MeshDeflection doe="0">0.1</MeshDeflection>
+  <Cables/>
+  <Joints/>
+ </Geometry>
+ <Simulation>
+  <Time>
+   <SimulationTime doe="0">1</SimulationTime>
+   <TimeStepMode type="FixedAutomatic">
+    <Courant doe="0">1</Courant>
+   </TimeStepMode>
+  </Time>
+  <LatticeDiscretization>
+   <ResolvedScale doe="0">0.005</ResolvedScale>
+   <RefinementAlgorithm>NearStaticWalls</RefinementAlgorithm>
+   <Options>
+    <SealSmallGaps>Automatic</SealSmallGaps>
+    <RefinementInWindDirection>On</RefinementInWindDirection>
+    <RefinementBasedOnSimulationData type="Disabled">
+     <Threshold doe="0">0</Threshold>
+     <SymmetrizeDomain>Disabled</SymmetrizeDomain>
+    </RefinementBasedOnSimulationData>
+   </Options>
+   <ShapesOptions>
+    <Shape type="DartAsm">
+     <TargetResolvedScale doe="0">0.000625</TargetResolvedScale>
+     <SealSmallGaps>Off</SealSmallGaps>
+     <Surfaces/>
+     <Children/>
+    </Shape>
+   </ShapesOptions>
+   <Regions/>
+  </LatticeDiscretization>
+  <StoreData>
+   <FramesFrequency doe="0">200</FramesFrequency>
+   <SaveFramesFrom doe="0">0</SaveFramesFrom>
+   <NumericalDataFrequency type="SolverTimeStep">
+    <ArbitraryLatticeLevel>0.005</ArbitraryLatticeLevel>
+   </NumericalDataFrequency>
+   <SaveAveragedFields type="On">
+    <InitialTimeForAveraging doe="0">0.6</InitialTimeForAveraging>
+    <SaveStandardDeviationAndRMSFields>Off</SaveStandardDeviationAndRMSFields>
+    <SaveAxisForceDistribution>Off</SaveAxisForceDistribution>
+   </SaveAveragedFields>
+   <SaveResumeFile>Off</SaveResumeFile>
+   <ComputeMarkers>Off</ComputeMarkers>
+   <FieldsToSave>
+    <Vorticity>On</Vorticity>
+    <StaticPressure>On</StaticPressure>
+    <TotalPressure>On</TotalPressure>
+    <TurbulenceIntensity>On</TurbulenceIntensity>
+    <EffectiveViscosity>On</EffectiveViscosity>
+    <QCriterion>Off</QCriterion>
+   </FieldsToSave>
+   <StaticPressureFilters/>
+   <Probes/>
+   <SolverSurfaceIntegrals/>
+   <SolverVolumeIntegrals/>
+   <CuttingPlanes/>
+  </StoreData>
+  <MpiOptions isRemoteCommand="0" mpiIsBeenUsed="1">
+   <WorkingDirectory></WorkingDirectory>
+   <User>GTI1</User>
+   <Machines/>
+   <QueueSystem>NONE</QueueSystem>
+   <NumJobs>2</NumJobs>
+   <ThreadsPerJobs>1</ThreadsPerJobs>
+   <MpiImplementation>OpenMPI4</MpiImplementation>
+   <EngineInstallDir>C:/Program Files/SIMULIA/XFlow_2019x_v106p05_DSLS</EngineInstallDir>
+   <HeadNodeChecked>0</HeadNodeChecked>
+   <HeadNode></HeadNode>
+   <IsDistributed>1</IsDistributed>
+   <IsRemotePreprocessing>1</IsRemotePreprocessing>
+   <RetrieveSimData></RetrieveSimData>
+   <SMBAccess>0</SMBAccess>
+   <RemoteOS>Unix</RemoteOS>
+   <QueueCommand></QueueCommand>
+   <QueueScript></QueueScript>
+  </MpiOptions>
+ </Simulation>
+ <Post-Processing>
+  <General>
+   <Data>Instantaneous</Data>
+   <InterpolationMode>Off</InterpolationMode>
+   <Show>
+    <DomainStructure>
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <MinLevel>0</MinLevel>
+     <MaxLevel>0</MaxLevel>
+     <CellSize>Off</CellSize>
+    </DomainStructure>
+    <VolumetricField>
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <VisualisationField>StaticPressure</VisualisationField>
+     <TransferenceLaw>a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a*a</TransferenceLaw>
+    </VolumetricField>
+    <SurfaceInfo type="3dField">
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <Field>Vorticity</Field>
+    </SurfaceInfo>
+    <Isocontours>
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <Number>5</Number>
+    </Isocontours>
+   </Show>
+  </General>
+  <CuttingPlanes>
+   <CuttingPlane1>
+    <VisibilityOnViews>0</VisibilityOnViews>
+    <Axis type="z">
+     <Position>0</Position>
+    </Axis>
+    <VisualisationMode type="3dField">
+     <Field>Velocity</Field>
+     <RayTracing>On</RayTracing>
+    </VisualisationMode>
+    <Material type="Rubber">
+     <Shading>Flat</Shading>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </Material>
+   </CuttingPlane1>
+   <CuttingPlane2>
+    <VisibilityOnViews>0</VisibilityOnViews>
+    <Axis type="Y">
+     <Position>0</Position>
+    </Axis>
+    <VisualisationMode type="Vectors">
+     <UniformDistribution>Off</UniformDistribution>
+     <ArrowsDensity>0.5</ArrowsDensity>
+     <ArrowLength>0.5</ArrowLength>
+     <Field>Velocity</Field>
+    </VisualisationMode>
+    <Material type="Rubber">
+     <Shading>Flat</Shading>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </Material>
+   </CuttingPlane2>
+  </CuttingPlanes>
+  <Isosurfaces/>
+  <StreamTracers/>
+  <PlotLines/>
+  <Sensors/>
+  <SurfaceIntegrals/>
+  <VolumeIntegrals/>
+  <CustomFields/>
+  <Entities/>
+  <Cameras/>
+  <ClippingPlanes/>
+  <Views>
+   <GraphicView1>
+    <CameraSettings>
+     <LinkToCamera>GraphicView1</LinkToCamera>
+     <Location>
+      <From>( -42.1045 , 7.87027 , 7.12898 )</From>
+      <To>( -0.0184592 , 0.00167767 , 0.00144915 )</To>
+      <Up>( 0.178614 , 0.983455 , -0.0302103 )</Up>
+     </Location>
+     <ManualClippingPlanes type="Off"/>
+     <Perspective type="Off"/>
+    </CameraSettings>
+   </GraphicView1>
+  </Views>
+ </Post-Processing>
+ <Animation>
+  <AnimationOptions animationMode="0"/>
+  <AnimationProperties firstFrame="0" timeLaw="0.001500 + t_animation" framesFrequency="200" lastFrame="1" duration="0.0125"/>
+  <AnimatedItems>
+   <GeneralItems/>
+   <GeometryItems/>
+   <CuttingPlanesItems/>
+   <IsosurfacesItems/>
+   <StreamTracersItems/>
+  </AnimatedItems>
+  <ImageProperties input="0" width="1875" holdAspectRatio="1" height="1345"/>
+  <Save quality="2" frameRate="25" outputPNG="0" checkdefaultfolder="0" outputFormat="0" imageBaseName="video" folder="C:/Users/iowqi/Desktop/RoboMaster/Project/DartGuidance/sim/DartHead/animation"/>
+ </Animation>
+ <AnalysisSettings>
+  <StaticPressure maxValue="314.509" isAutomatic="0" minValue="-1400.85"/>
+  <Velocity maxValue="1" isAutomatic="1" minValue="0"/>
+  <Vorticity maxValue="1" isAutomatic="1" minValue="0"/>
+  <Vx maxValue="1" isAutomatic="1" minValue="-1"/>
+  <Vy maxValue="1" isAutomatic="1" minValue="-1"/>
+  <Vz maxValue="1" isAutomatic="1" minValue="-1"/>
+  <TotalPressure maxValue="1" isAutomatic="1" minValue="-1"/>
+  <TurbulenceIntensity maxValue="1" isAutomatic="1" minValue="0"/>
+  <Temperature maxValue="330" isAutomatic="1" minValue="277"/>
+  <Viscosity maxValue="1" isAutomatic="1" minValue="0"/>
+  <VOF maxValue="1" isAutomatic="1" minValue="0"/>
+  <SurfaceInfo maxValue="1" isAutomatic="1" minValue="0"/>
+  <CustomFields/>
+  <PassiveScalars/>
+ </AnalysisSettings>
+ <UserDefinedVariables/>
+ <FMU_IO/>
+ <ViewAngles>
+  <GraphicView1 OrthoViewAxisX="0" OrthoViewAxisMinusY="0" OrthoViewAxisMinusZ="0" OrthoViewAxisMinusX="0" OrthoViewAxisY="0" OrthoViewAxisZ="0"/>
+ </ViewAngles>
+ <DoeConfiguration>
+  <DoeInputs/>
+  <DoeOutputs/>
+  <DoeProjectMetadata Export="0" CommandLineVariables="0"/>
+ </DoeConfiguration>
+</XFlow>

@@ -1,0 +1,16 @@
+[ INFO  ] ## DOMAIN GENERATION ##
+[ INFO  ] XFlow Build 116.00
+[ INFO  ] Execution line: C:\Program Files\SIMULIA\XFlow_2022\generateDomain3d.exe C:/Users/iowqi/Desktop/RoboMaster/Project/DartGuidance/sim/DartHead.xfp -log=2 /maxcpu=8 
+[ INFO  ] Computation limited to: 8 cores.
+[ INFO  ] Initialization of DSLS using DSLicSrv.txt from 'C:\ProgramData\DassaultSystemes\Licenses': failed
+[ INFO  ] Initialization of RLM using lic file from 'C:/Users/iowqi\.xflow_cfd' or installation directory: success
+[ INFO  ] Computation will use: 8 cores.
+[ INFO  ] 
+[ INFO  ] Num cpus detected: 8[ INFO  ] Generating Octree with 4 levels.[ INFO  ] Level 0[ INFO  ] Level 1[ INFO  ] Level 2[ INFO  ] Level 3[ INFO  ] Determining lattice/geometry intersection...[ INFO  ] Determining regions with fluid[ INFO  ] Automatically determining regions with fluid[ INFO  ] External wind tunnel domain: Identifying just one external region[ INFO  ] 4 discarded regions
+[ INFO  ] 1 identified regions
+[ INFO  ] Generating node map.[ INFO  ] Num active elements at level  0: 11112 / 16000
+[ INFO  ] Num active elements at level  1: 24956 / 42000
+[ INFO  ] Num active elements at level  2: 57978 / 131648
+[ INFO  ] Num active elements at level  3: 333926 / 569088
+[ INFO  ] Total number of elements: 427972[ INFO  ] Writing domain[ INFO  ] Num boundary elements: 33005[ INFO  ] Overall broken links: 243290
+[ INFO  ] Domain successfully generated.
